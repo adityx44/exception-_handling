@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class exceptionhandling
+{
+    private:
+    int age,vehicle;
+    long income;
+    char city[30];
+    public:
+    void getdata()
+    {
+        cout<<"Enter age\n";
+        cin>>age;
+        cout<<"Enter number of vehicles \n";
+        cin>>vehicle;
+        cout<<"Enter income\n";
+        cin>>income;
+        cout<<"Enter city \n";
+        cin>>city;
+    }
+    void checkcondition()
+    {
+        try
+        {
+            if(age<18||age>50)
+            {
+                throw"Age should be between 18 and 55";
+            }
+
+        }
+        catch(const char*msg)
+        {
+            cerr<<msg;
+
+        }
+    }
+
+    
+};
+int main()
+{
+    exceptionhandling ex;
+    ex.getdata();
+    ex.checkcondition();
+    return 0;
+}
